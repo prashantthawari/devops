@@ -2,3 +2,4 @@
 echo 'Hello World'
 myvar="i am learing shell scripting"
 echo $myvar
+echo "hello prashant"
