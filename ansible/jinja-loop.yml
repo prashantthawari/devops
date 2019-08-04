@@ -1,0 +1,9 @@
+- hosts: loc
+  vars:
+    list1: ['Template iterate','Template loop','Template item']
+  tasks:
+    - name: Ansible template loop example.
+    - template:
+        src: templates_example2.j2
+        dest: /opt/devops/ansible/output.txt
+        mode: 0777

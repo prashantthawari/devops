@@ -1,0 +1,14 @@
+- name: Execute a script on all servers
+  hosts: all_servers
+  tasks:
+    - name: I am printing ansible host name
+      debug:
+        msg: "{{ansible_host}}"
+    - name: install mysql server
+      yum:
+        name: mysql
+        state: latest 
+    - name: restarting my sql service
+      service: name=mysql state=restarted
+      when: ansible_host=='172.31.43.199'
+

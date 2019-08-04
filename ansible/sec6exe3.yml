@@ -1,0 +1,12 @@
+- name: Add name server entry if not already entered
+  hosts: localhost 
+  tasks:
+    - shell: cat /etc/resolv.conf
+      register: command_output
+      ignore_errors: yes
+    - debug: msg=' The output of command is "{{ command_output }}"'
+
+    - debug: var=command_output.stdout
+  
+    - shell: echo "nameserver 10.0.250.10" >> /etc/resolv.conf
+      when: command_output.stdout.find('10.0.250.10') == -1

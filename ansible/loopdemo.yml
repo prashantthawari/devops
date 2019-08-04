@@ -1,0 +1,28 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  vars: 
+  - fruits:
+      - Apple
+      - Orange
+      - Bannana
+      - Grapes
+  - cars:
+      - Camry
+      - Accord
+      - RolceRoyas
+      - BMW  
+  tasks:
+    - command: echo "{{ item }}"
+      with_items: '{{ fruits }}'
+    
+    - command: echo "{{ item }}"
+      with_items: '{{ cars }}'
+
+    - debug: msg="{{ item }}" 
+      with_items: '{{ fruits }}'
+
+    - debug: msg="{{ item }}"
+      with_items: '{{ cars }}'

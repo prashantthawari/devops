@@ -1,0 +1,12 @@
+- name: i am an adult or child
+  hosts: localhost
+  vars:
+    age: 26
+  tasks:
+    - command: echo "I am a child"
+      when: age < 18
+    
+    - command: echo "I am a adult"
+      when: age >= 18
+      
+

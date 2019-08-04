@@ -1,0 +1,8 @@
+ --------------------------------
+# Sample Inventory File
+
+# Web Servers
+web1 ansible_host=172.31.43.199 ansible_connection=ssh
+[all_servers]
+web1
+
